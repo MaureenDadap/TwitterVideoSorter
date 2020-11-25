@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Twitter Videos Sorter',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),

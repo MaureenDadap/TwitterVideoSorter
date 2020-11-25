@@ -39,7 +39,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.twitter_video_sort"
+        applicationId "com.flutter.twitter_video_sort"
         minSdkVersion 26
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
