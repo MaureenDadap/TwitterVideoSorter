@@ -27,12 +27,15 @@ class _LandingPageState extends State<LandingPage> {
           centerTitle: true,
           title: Icon(Icons.auto_awesome),
           backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black87),
           bottom: TabBar(
             tabs: [
               Tab(
-                child: Text("Home"),
+                child: Text("Home", style: TextStyle(color: Colors.black87)),
               ),
-              Tab(child: Text("Boards")),
+              Tab(
+                child: Text("Boards", style: TextStyle(color: Colors.black87)),
+              ),
             ],
           ),
         ),

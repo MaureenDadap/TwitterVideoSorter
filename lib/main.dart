@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     Widget _first;
 
     FirebaseAuthModel().checkAuth();
-    if (FirebaseAuthModel().isLoggedIn == null) {
+    if (FirebaseAuthModel().isLoggedIn == false) {
       _first = SignInPage();
     } else {
       _first = LandingPage();
