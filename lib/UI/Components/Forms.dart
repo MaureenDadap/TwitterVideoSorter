@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter_video_sort/BusinessLogic/FirebaseAuth.dart';
 
 import 'Buttons.dart';
 
@@ -42,17 +43,18 @@ class _SignInFormState extends State<SignInForm> {
           ),
           SizedBox(height: 24),
           GradientButton(
-            child: Text(
-              'SIGN IN',
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
-            gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [Colors.redAccent[400], Colors.pink[700]]),
-            //onPressed:
-          )
+              child: Text(
+                'SIGN IN',
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Colors.redAccent[400], Colors.pink[700]]),
+              onPressed: () {
+                FirebaseAuthLogin().signIn();
+              })
         ],
       ),
     );

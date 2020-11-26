@@ -12,6 +12,7 @@ class FirebaseAuthModel extends ChangeNotifier {
         isLoggedIn = false;
       } else {
         isLoggedIn = true;
+        print('user is logged in!');
       }
 
       notifyListeners();
@@ -20,5 +21,17 @@ class FirebaseAuthModel extends ChangeNotifier {
 }
 
 class FirebaseAuthLogin {
-  
+  void signIn() async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+              email: "maureendadap@gmail.com", password: "12345678");
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+  }
 }
