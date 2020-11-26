@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "703928243207",
+    "firebase_url": "https://twitter-videos-organizer.firebaseio.com",
+    "project_id": "twitter-videos-organizer",
+    "storage_bucket": "twitter-videos-organizer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703928243207:android:4dc5def32c5807815386a2",
+        "android_client_info": {
+          "package_name": "com.flutter.twitter_video_sort"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703928243207-9deu9k9absfv1gkioq6h8mlgcsvs36gm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutter.twitter_video_sort",
+            "certificate_hash": "f821de9684904afb4b2c19d1f774123294a54c5c"
+          }
+        },
+        {
+          "client_id": "703928243207-3k8nq721adq8a7f6cml545qs8bbjujdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGPtHXarUA7fUmSRbt_I8avEt102qR9VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703928243207-3k8nq721adq8a7f6cml545qs8bbjujdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703928243207:android:5eb835635bcf26e95386a2",
+        "android_client_info": {
+          "package_name": "com.green_triangle.twittervideo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703928243207-f0j34olfotqal658f8ufnl2tqlmiu3mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.green_triangle.twittervideo",
+            "certificate_hash": "f821de9684904afb4b2c19d1f774123294a54c5c"
+          }
+        },
+        {
+          "client_id": "703928243207-3k8nq721adq8a7f6cml545qs8bbjujdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGPtHXarUA7fUmSRbt_I8avEt102qR9VA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703928243207-3k8nq721adq8a7f6cml545qs8bbjujdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
