@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget _first;
-
-    FirebaseAuthModel().checkAuth();
+    FirebaseAuthModel().listenAuthState();
     if (FirebaseAuthModel().isLoggedIn == false) {
       _first = SignInPage();
     } else {
       _first = LandingPage();
     }
+    print(FirebaseAuthModel().isLoggedIn);
 
     return ChangeNotifierProvider(
         create: (context) => FirebaseAuthModel(),
@@ -33,7 +33,27 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.pink,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
-          home: _first,
+          home: _first, //TODO: change back to _first
         ));
+  }
+}
+
+//TODO: loading animation
+class Loading extends StatelessWidget {
+  const Loading({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("LOADING..."));
+  }
+}
+
+//TODO: error page with retry button
+class SomethingWentWrong extends StatelessWidget {
+  const SomethingWentWrong({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("Something Went Wrong..."));
   }
 }

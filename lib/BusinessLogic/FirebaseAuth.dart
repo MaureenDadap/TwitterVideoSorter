@@ -6,7 +6,11 @@ class FirebaseAuthModel extends ChangeNotifier {
   FirebaseAuth auth = FirebaseAuth.instance;
   bool isLoggedIn;
 
-  void checkAuth() async {
+  Future<User> checkUserAuth() async {
+    return FirebaseAuth.instance.currentUser;
+  }
+
+  void listenAuthState() async {
     auth.authStateChanges().listen((User user) {
       if (user == null) {
         isLoggedIn = false;
@@ -14,18 +18,31 @@ class FirebaseAuthModel extends ChangeNotifier {
         isLoggedIn = true;
         print('user is logged in!');
       }
-
       notifyListeners();
     });
   }
 }
 
+class FirebaseAuthLogOut {
+  Future<void> logOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
+}
+
 class FirebaseAuthLogin {
-  void signIn() async {
+  String email;
+  String password;
+
+  FirebaseAuthLogin(String email, String password) {
+    this.email = email;
+    this.password = password;
+  }
+
+  Future<void> signInWithEmail() async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-              email: "maureendadap@gmail.com", password: "12345678");
+          .signInWithEmailAndPassword(email: email, password: password);
+          
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');

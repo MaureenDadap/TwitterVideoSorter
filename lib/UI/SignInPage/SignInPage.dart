@@ -13,6 +13,12 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPage extends State<SignInPage> {
   @override
+  void initState() {
+    super.initState();
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
