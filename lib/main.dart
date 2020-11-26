@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:firebase_core/firebase_core.dart';
-import 'package:twitter_video_sort/BusinessLogic/FirebaseMultiProvider.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:twitter_video_sort/BusinessLogic/FirebaseAuth.dart';
 
 import 'package:twitter_video_sort/UI/LandingPage/LandingPage.dart';
 import 'package:twitter_video_sort/UI/SignInPage/SignInPage.dart';
@@ -15,7 +14,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     Widget _first;
@@ -32,7 +30,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Twitter Videos Sorter',
           theme: ThemeData(
-            primarySwatch: Colors.amber,
+            primarySwatch: Colors.pink,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           home: _first,

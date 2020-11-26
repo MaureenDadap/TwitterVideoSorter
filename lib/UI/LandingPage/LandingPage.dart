@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:twitter_video_sort/BusinessLogic/FirebaseMultiProvider.dart';
 import 'package:twitter_video_sort/UI/SignInPage/SignInPage.dart';
 
 class LandingPage extends StatefulWidget {

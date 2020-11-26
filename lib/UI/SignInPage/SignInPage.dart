@@ -1,5 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:twitter_video_sort/UI/Components/Buttons.dart';
+import 'package:twitter_video_sort/UI/Components/Forms.dart';
+import 'package:twitter_video_sort/UI/RegisterPage.dart/RegisterPage.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -10,52 +15,82 @@ class _SignInPage extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text(
-          "Sign In",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(48.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 128),
+              Text(
+                "Sign In",
+                style: TextStyle(fontSize: 36, fontWeight: FontWeight.w900),
+              ),
+              SizedBox(height: 24),
+              SignInForm(),
+              SizedBox(height: 24),
+              Text(
+                'or',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.pink[400], fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 24),
+              Row(children: [
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: RaisedButton(
+                    child: Text('Google'),
+                    color: Colors.white,
+                    onPressed: () {},
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: RaisedButton(
+                    child: Text('Twitter'),
+                    //child: Icon(Icons.group),
+                    color: Colors.white,
+                    onPressed: () {},
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+              ]),
+              SizedBox(height: 36),
+              Container(
+                  child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have an account yet? "),
+                  FlatButton(
+                    padding: EdgeInsets.all(0),
+                    child: Text("Register Here",
+                        style: TextStyle(
+                            color: Colors.pink, fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RegisterPage()));
+                    },
+                  ),
+                ],
+              ))
+            ],
+          ),
         ),
-        SignInForm(),
-      ]),
-    );
-  }
-}
-
-class SignInForm extends StatefulWidget {
-  @override
-  _SignInFormState createState() => _SignInFormState();
-}
-
-class _SignInFormState extends State<SignInForm> {
-  final _formKey = GlobalKey<FormState>();
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: <Widget>[
-          TextFormField(
-            decoration: InputDecoration(hintText: "email"),
-            validator: (value) {
-              // validation logic
-            },
-          ),
-          TextFormField(
-            decoration: InputDecoration(hintText: "password"),
-            validator: (value) {
-              // validation logic
-            },
-          ),
-          RaisedButton(
-            child: Text('Submit'),
-            onPressed: () {
-              if (_formKey.currentState.validate()) {
-                // text in form is valid
-              }
-            },
-          ),
-        ],
       ),
     );
   }
